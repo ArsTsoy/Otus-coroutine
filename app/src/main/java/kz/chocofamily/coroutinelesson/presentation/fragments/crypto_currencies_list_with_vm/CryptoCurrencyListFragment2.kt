@@ -6,16 +6,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list_currency.*
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import kz.chocofamily.coroutinelesson.R
 import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
-import kz.chocofamily.coroutinelesson.data.repositories.BaseRepository
 import kz.chocofamily.coroutinelesson.presentation.controllers.adapters.CryptoCurrencyRVAdapter
 
 /**
@@ -49,11 +44,9 @@ class CryptoCurrencyListFragment2 : Fragment() {
     //region Support
     private fun loadData() {
         showLoading()
-        viewModel?.let { viewModel ->
-            viewModel.data.observe(this.viewLifecycleOwner, Observer {
-                showList(it)
-            })
-        }
+        viewModel.loadData().observe(this.viewLifecycleOwner, Observer {
+            showList(it)
+        })
     }
 
     private fun showLoading() {

@@ -17,7 +17,12 @@ class CryptoCurrencyViewModel: ScopedViewModel() {
     private val repository: BaseRepository = BaseRepository()
 
     val data: LiveData<List<CryptoCurrencyModel>> = liveData {
-        val retrievedData = repository.getCryptoCurrencyList(1)
+        val retrievedData = repository.getCryptoCurrencyList(2000)
+        emit(retrievedData)
+    }
+
+    fun loadData()= liveData {
+        val retrievedData = repository.getCryptoCurrencyList(2000)
         emit(retrievedData)
     }
 }
