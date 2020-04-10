@@ -1,6 +1,7 @@
 package kz.chocofamily.coroutinelesson.presentation.controllers.viewholders
 
 import android.view.ViewGroup
+import com.bumptech.glide.Glide
 import kotlinx.android.synthetic.main.vh_currency.view.*
 import kz.chocofamily.coroutinelesson.R
 import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
@@ -19,6 +20,9 @@ class CryptoCurrencyVH(
     override fun bind(model: CryptoCurrencyModel) {
         with(itemView) {
             //TODO: заменить на UIExtensions
+            Glide.with(context)
+                .load(model.imageUrl)
+                .into(ivCurrencyLogo)
             tvSymbol.text = model.symbol
             tvName.text = model.name
             tvPrice.text = model.currentPrice.toString()
