@@ -9,7 +9,7 @@ import kz.chocofamily.coroutinelesson.presentation.controllers.viewholders.Crypt
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
-class CryptoCurrencyListRVAdapter : RecyclerView.Adapter<CryptoCurrencyVH>() {
+class CryptoCurrencyRVAdapter : RecyclerView.Adapter<CryptoCurrencyVH>() {
 
     //region Vars
     private val items: ArrayList<CryptoCurrencyModel> = ArrayList()
