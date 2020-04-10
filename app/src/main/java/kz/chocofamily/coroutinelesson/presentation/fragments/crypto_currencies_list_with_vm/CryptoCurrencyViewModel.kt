@@ -10,6 +10,8 @@ import kz.chocofamily.coroutinelesson.presentation.fragments.ScopedViewModel
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
+//TODO: добавить ExceptionHandler
+
 class CryptoCurrencyViewModel(
     repository: BaseRepository
 ): ScopedViewModel() {

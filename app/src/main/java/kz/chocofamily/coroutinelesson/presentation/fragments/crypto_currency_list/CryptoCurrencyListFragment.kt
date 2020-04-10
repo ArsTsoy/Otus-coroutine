@@ -17,6 +17,8 @@ import kz.chocofamily.coroutinelesson.presentation.controllers.adapters.CryptoCu
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
+//TODO: добавить ExceptionHandler
+
 class CryptoCurrencyListFragment : Fragment() {
 
     //region Vars
