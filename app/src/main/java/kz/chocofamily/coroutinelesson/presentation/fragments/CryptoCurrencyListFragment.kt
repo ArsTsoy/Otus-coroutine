@@ -17,7 +17,7 @@ import kz.chocofamily.coroutinelesson.presentation.controllers.adapters.CryptoCu
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
-class CryproCurrencyListFragment : Fragment() {
+class CryptoCurrencyListFragment : Fragment() {
 
     //region Vars
     private val repository = BaseRepository()
