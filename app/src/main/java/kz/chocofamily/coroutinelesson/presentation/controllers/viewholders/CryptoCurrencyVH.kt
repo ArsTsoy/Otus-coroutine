@@ -1,6 +1,7 @@
 package kz.chocofamily.coroutinelesson.presentation.controllers.viewholders
 
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.vh_currency.view.*
 import kz.chocofamily.coroutinelesson.R
 import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
 
@@ -16,7 +17,13 @@ class CryptoCurrencyVH(
 ) {
     //region Overridden Methods
     override fun bind(model: CryptoCurrencyModel) {
-        TODO("Not yet implemented")
+        with(itemView) {
+            //TODO: заменить на UIExtensions
+            tvSymbol.text = model.symbol
+            tvName.text = model.name
+            tvPrice.text = model.currentPrice.toString()
+            tvMarketCap.text = model.marketCap.toString()
+        }
     }
     //endregion
 }

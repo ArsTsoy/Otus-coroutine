@@ -8,18 +8,18 @@ import com.google.gson.annotations.SerializedName
 
 data class CryptoCurrencyModel(
     @SerializedName("symbol")
-    private val symbol: String
+    val symbol: String
 ) {
 
     @SerializedName("image")
     val imageUrl: String? = null
 
     @SerializedName("name")
-    private val name: String = ""
+    val name: String = ""
 
     @SerializedName("market_cap")
-    private val marketCap: Long = 0
+    val marketCap: Long = 0
 
     @SerializedName("current_price")
-    private val currentPrice = 0f
+    val currentPrice = 0f
 }
