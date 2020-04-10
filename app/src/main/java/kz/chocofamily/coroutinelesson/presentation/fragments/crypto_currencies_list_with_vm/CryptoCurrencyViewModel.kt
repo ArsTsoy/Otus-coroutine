@@ -12,9 +12,9 @@ import kz.chocofamily.coroutinelesson.presentation.fragments.ScopedViewModel
 
 //TODO: добавить ExceptionHandler
 
-class CryptoCurrencyViewModel(
-    repository: BaseRepository
-): ScopedViewModel() {
+class CryptoCurrencyViewModel: ScopedViewModel() {
+
+    private val repository: BaseRepository = BaseRepository()
 
     val data: LiveData<List<CryptoCurrencyModel>> = liveData {
         val retrievedData = repository.getCryptoCurrencyList(1)

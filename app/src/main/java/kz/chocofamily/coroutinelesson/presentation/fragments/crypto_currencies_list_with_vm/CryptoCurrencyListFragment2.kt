@@ -25,17 +25,13 @@ import kz.chocofamily.coroutinelesson.presentation.controllers.adapters.CryptoCu
 class CryptoCurrencyListFragment2 : Fragment() {
 
     //region Vars
-    private val repository = BaseRepository()
     private val adapter = CryptoCurrencyRVAdapter()
-    protected var viewModel: CryptoCurrencyViewModel? = null
+    private val viewModel: CryptoCurrencyViewModel by lazy {
+        ViewModelProviders.of(this).get(CryptoCurrencyViewModel::class.java)
+    }
     //endregion
 
     //region Overridden Methods
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        viewModel = ViewModelProviders.of(this).get(CryptoCurrencyViewModel::class.java)
-    }
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
