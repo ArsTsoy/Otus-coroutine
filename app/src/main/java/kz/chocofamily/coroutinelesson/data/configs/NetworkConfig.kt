@@ -1,4 +1,4 @@
-package kz.chocofamily.coroutinelesson.configs
+package kz.chocofamily.coroutinelesson.data.configs
 
 /**
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-09

@@ -1,6 +1,6 @@
-package kz.chocofamily.coroutinelesson.sources
+package kz.chocofamily.coroutinelesson.data.sources
 
-import retrofit2.Call
+import kz.chocofamily.coroutinelesson.data.entities.ModelCryptoCurrency
 import retrofit2.http.GET
 import retrofit2.http.Query
 import java.util.*
@@ -12,10 +12,11 @@ import java.util.*
 interface CurrencyApi {
 
     @GET("v3/coins/markets?sparkline=false")
-    fun getCurrencyList(
+    suspend fun getCurrencyList(
         @Query("vs_currency") chosenCurrency: String?,
         @Query("order") orderBy: String?,
         @Query("per_page") perPage: Int,
         @Query("page") page: Int
-    ): Call<ArrayList<ModelCryptocurrency?>?>?
+    ): ArrayList<ModelCryptoCurrency>
+
 }

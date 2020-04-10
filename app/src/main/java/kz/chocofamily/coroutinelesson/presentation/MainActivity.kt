@@ -1,7 +1,8 @@
-package kz.chocofamily.coroutinelesson
+package kz.chocofamily.coroutinelesson.presentation
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import kz.chocofamily.coroutinelesson.R
 
 class MainActivity : AppCompatActivity() {
 
