@@ -53,8 +53,8 @@ class CryptoCurrencyListFragment2 : Fragment() {
     //region Support
     private fun loadData() {
         showLoading()
-        viewModel?.let {
-            it.data.observe(this.viewLifecycleOwner, Observer {
+        viewModel?.let { viewModel ->
+            viewModel.data.observe(this.viewLifecycleOwner, Observer {
                 showList(it)
             })
         }
