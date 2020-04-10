@@ -6,7 +6,7 @@ import com.google.gson.annotations.SerializedName
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
-data class ModelCryptoCurrency(
+data class CryptoCurrencyModel(
     @SerializedName("symbol")
     private val symbol: String
 ) {
