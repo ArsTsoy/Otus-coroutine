@@ -1,4 +1,4 @@
-package kz.chocofamily.coroutinelesson.presentation.fragments
+package kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list
 //
 //import androidx.lifecycle.ViewModel
 //import kz.chocofamily.coroutinelesson.data.repositories.BaseRepository

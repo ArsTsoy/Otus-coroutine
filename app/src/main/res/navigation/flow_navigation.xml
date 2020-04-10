@@ -5,6 +5,6 @@
 
     <fragment
         android:id="@+id/cryproCurrencyListFragment"
-        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.CryptoCurrencyListFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list.CryptoCurrencyListFragment"
         android:label="CryproCurrencyListFragment" />
 </navigation>

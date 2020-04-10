@@ -1,4 +1,4 @@
-package kz.chocofamily.coroutinelesson.presentation.fragments
+package kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -21,7 +21,8 @@ class CryptoCurrencyListFragment : Fragment() {
 
     //region Vars
     private val repository = BaseRepository()
-    private val uiScope = MainScope()
+    private val uiScope =
+        kz.chocofamily.coroutinelesson.presentation.fragments.MainScope()
 
     private val adapter = CryptoCurrencyRVAdapter()
     //endregion
@@ -59,11 +60,11 @@ class CryptoCurrencyListFragment : Fragment() {
     }
 
     private fun showLoading() {
-
+        progressBar.visibility = View.VISIBLE
     }
 
     private fun hideLoading() {
-
+        progressBar.visibility = View.GONE
     }
 
     private fun showList(listCryptoCurrencies: List<CryptoCurrencyModel>) {
