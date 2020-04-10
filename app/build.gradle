@@ -39,6 +39,7 @@ dependencies {
 
     // RETROFIT
     implementation "com.squareup.retrofit2:retrofit:$retrofitLibraryVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitLibraryVersion"
 
     // NAVIGATION
     implementation "androidx.navigation:navigation-fragment:$navVersion"
