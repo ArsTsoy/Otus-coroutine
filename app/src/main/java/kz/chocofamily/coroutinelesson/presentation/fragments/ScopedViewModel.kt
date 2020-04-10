@@ -10,7 +10,7 @@ import kotlinx.coroutines.cancelChildren
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
-class ScopedViewModel : ViewModel() {
+open class ScopedViewModel : ViewModel() {
 
     private val job = SupervisorJob()
     protected val uiScope = CoroutineScope(Dispatchers.Main + job)

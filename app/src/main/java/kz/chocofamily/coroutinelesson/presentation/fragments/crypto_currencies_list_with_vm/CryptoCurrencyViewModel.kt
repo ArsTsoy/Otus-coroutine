@@ -1,0 +1,21 @@
+package kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm
+
+import androidx.lifecycle.LiveData
+import androidx.lifecycle.liveData
+import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
+import kz.chocofamily.coroutinelesson.data.repositories.BaseRepository
+import kz.chocofamily.coroutinelesson.presentation.fragments.ScopedViewModel
+
+/**
+ * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
+ */
+
+class CryptoCurrencyViewModel(
+    repository: BaseRepository
+): ScopedViewModel() {
+
+    val data: LiveData<List<CryptoCurrencyModel>> = liveData {
+        val retrievedData = repository.getCryptoCurrencyList(1)
+        emit(retrievedData)
+    }
+}
