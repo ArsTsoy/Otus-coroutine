@@ -27,6 +27,7 @@ class CryptoCurrencyViewModel: ScopedViewModel() {
             val retrievedData = repository.getCryptoCurrencyList(2000)
             emit(retrievedData)
         } catch (e: Throwable) {
+            //Не понял как тут дальше прокинуть ошибку во View
             Log.i("myCryptoError", "error: $e")
         }
 

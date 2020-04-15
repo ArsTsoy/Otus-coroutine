@@ -4,10 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.fragment_list_currency.*
-import kotlinx.coroutines.*
+import kotlinx.coroutines.CoroutineExceptionHandler
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kz.chocofamily.coroutinelesson.R
 import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
 import kz.chocofamily.coroutinelesson.data.repositories.BaseRepository
@@ -24,8 +28,17 @@ class CryptoCurrencyListFragment : Fragment() {
     //region Vars
     private val repository = BaseRepository()
     private val uiScope =
-        kz.chocofamily.coroutinelesson.presentation.fragments.MainScope()
-
+        object : kz.chocofamily.coroutinelesson.presentation.fragments.MainScope() {
+            override fun provideExceptionHandler(): CoroutineExceptionHandler {
+                return CoroutineExceptionHandler { coroutineContext, throwable ->
+                    Toast.makeText(
+                        this@CryptoCurrencyListFragment.context,
+                        "Error handled: $throwable",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
+        }
     private val adapter = CryptoCurrencyRVAdapter()
     //endregion
 
