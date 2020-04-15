@@ -10,7 +10,7 @@ import retrofit2.http.Query
 
 interface CurrencyApi {
 
-    @GET("v3/coins/markets?sparkline=false")
+    @GET("v3/coins/marets?sparkline=false")
     suspend fun getCryptoCurrencyList(
         @Query("vs_currency") chosenCurrency: String?,
         @Query("order") orderBy: String?,

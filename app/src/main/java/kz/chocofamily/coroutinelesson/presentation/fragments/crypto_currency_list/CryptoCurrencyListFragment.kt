@@ -58,7 +58,6 @@ class CryptoCurrencyListFragment : Fragment() {
             }
             showList(res)
         }
-
     }
 
     private fun showLoading() {

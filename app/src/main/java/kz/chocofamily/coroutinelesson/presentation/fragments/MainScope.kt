@@ -1,12 +1,10 @@
 package kz.chocofamily.coroutinelesson.presentation.fragments
 
+import android.util.Log
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.SupervisorJob
-import kotlinx.coroutines.cancelChildren
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
 /**
@@ -15,9 +13,12 @@ import kotlin.coroutines.CoroutineContext
 
 class MainScope: CoroutineScope, LifecycleObserver {
 
+    private val exceptionHandler = CoroutineExceptionHandler { coroutineContext, throwable ->
+        Log.i("myMainScope", "e: $throwable")
+    }
     private val job = SupervisorJob()
     override val coroutineContext: CoroutineContext
-        get() = job + Dispatchers.Main
+        get() = job + Dispatchers.Main + exceptionHandler
 
     @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
     fun destroy() {

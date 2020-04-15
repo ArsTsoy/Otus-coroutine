@@ -1,5 +1,6 @@
 package kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.liveData
 import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
@@ -22,7 +23,12 @@ class CryptoCurrencyViewModel: ScopedViewModel() {
     }
 
     fun loadData()= liveData {
-        val retrievedData = repository.getCryptoCurrencyList(2000)
-        emit(retrievedData)
+        try{
+            val retrievedData = repository.getCryptoCurrencyList(2000)
+            emit(retrievedData)
+        } catch (e: Throwable) {
+            Log.i("myCryptoError", "error: $e")
+        }
+
     }
 }
