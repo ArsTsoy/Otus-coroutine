@@ -12,7 +12,7 @@ private const val FIRST_PAGE = 1
 
 class BaseRepository {
 
-    suspend fun getCryptoCurrencyList(page: Int = 1): List<CryptoCurrencyModel> {
+    suspend fun getCryptoCurrencyList(page: Int = FIRST_PAGE): List<CryptoCurrencyModel> {
         return NetworkInstance.currencyApi.getCryptoCurrencyList(
             Currency.USD.shortName,
             null,
