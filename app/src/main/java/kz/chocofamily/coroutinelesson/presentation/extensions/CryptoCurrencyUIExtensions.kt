@@ -7,5 +7,5 @@ import kz.chocofamily.coroutinelesson.data.entities.CryptoCurrencyModel
  */
 
 internal fun CryptoCurrencyModel.getUIMarketCap(): String {
-    return ""
+    return this.marketCap.toStringByThousandSeparators()
 }
