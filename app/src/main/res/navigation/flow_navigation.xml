@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/flow_navigation">
+    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/flow_navigation"
+    app:startDestination="@id/cryproCurrencyListFragment">
 
+    <fragment
+        android:id="@+id/cryproCurrencyListFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list.CryptoCurrencyListFragment"
+        android:label="CryproCurrencyListFragment" />
+    <fragment
+        android:id="@+id/cryptoCurrencyListFragment2"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm.CryptoCurrencyListFragment2"
+        android:label="CryptoCurrencyListFragment2" />
 </navigation>
