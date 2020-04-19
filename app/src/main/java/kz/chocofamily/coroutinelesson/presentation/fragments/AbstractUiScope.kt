@@ -10,7 +10,7 @@ import kotlin.coroutines.CoroutineContext
  * Created by Arslan Tsoy <t.me/arslantsoy> on 2020-04-10
  */
 
-abstract class MainScope : CoroutineScope, LifecycleObserver {
+abstract class AbstractUiScope : CoroutineScope, LifecycleObserver {
 
     //Не уверен в таком способе, но мне он показался проще чем создавать Wrapper <- хотелось бы тут комментария от Вас
     abstract fun provideExceptionHandler(): CoroutineExceptionHandler
@@ -20,8 +20,8 @@ abstract class MainScope : CoroutineScope, LifecycleObserver {
     override val coroutineContext: CoroutineContext
         get() = job + Dispatchers.Main + provideExceptionHandler()
 
-    @OnLifecycleEvent(Lifecycle.Event.ON_PAUSE)
+    @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     fun destroy() {
-        coroutineContext.cancelChildren()
+        job.cancel()
     }
 }

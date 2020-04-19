@@ -26,9 +26,9 @@ class CryptoCurrencyListFragment : Fragment() {
     //region Vars
     private val repository = BaseRepository()
     private val uiScope =
-        object : kz.chocofamily.coroutinelesson.presentation.fragments.MainScope() {
+        object : kz.chocofamily.coroutinelesson.presentation.fragments.AbstractUiScope() {
             override fun provideExceptionHandler(): CoroutineExceptionHandler {
-                return CoroutineExceptionHandler { coroutineContext, throwable ->
+                return CoroutineExceptionHandler { _, throwable ->
                     Toast.makeText(
                         this@CryptoCurrencyListFragment.context,
                         "Error handled: $throwable",
@@ -65,7 +65,7 @@ class CryptoCurrencyListFragment : Fragment() {
         showLoading()
         uiScope.launch {
             val res = withContext(Dispatchers.IO) {
-                repository.getCryptoCurrencyList(1)
+                repository.getCryptoCurrencyList()
             }
             showList(res)
         }
