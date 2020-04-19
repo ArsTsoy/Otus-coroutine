@@ -5,10 +5,10 @@
 
     <fragment
         android:id="@+id/cryproCurrencyListFragment"
-        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list.CryptoCurrencyListFragment"
+        android:name="kz.example.coroutinelesson.presentation.fragments.crypto_currency_list.CryptoCurrencyListFragment"
         android:label="CryproCurrencyListFragment" />
     <fragment
         android:id="@+id/cryptoCurrencyListFragment2"
-        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm.CryptoCurrencyListFragment2"
+        android:name="kz.example.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm.CryptoCurrencyListFragment2"
         android:label="CryptoCurrencyListFragment2" />
 </navigation>
