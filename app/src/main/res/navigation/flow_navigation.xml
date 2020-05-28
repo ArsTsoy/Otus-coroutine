@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/flow_navigation"
-    app:startDestination="@id/menuFragment2">
+    app:startDestination="@id/loginFragment">
+
+    <action
+        android:id="@+id/action_global_pinFragment"
+        app:destination="@id/pinFragment" />
 
     <fragment
         android:id="@+id/cryptoCurrencyListFragment2"
@@ -10,7 +14,11 @@
     <fragment
         android:id="@+id/loginFragment"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.LoginFragment"
-        android:label="LoginFragment" />
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_pinFragment"
+            app:destination="@id/pinFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mainFragment2"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MainFragment"
@@ -35,4 +43,17 @@
         android:id="@+id/profileFragment"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.ProfileFragment"
         android:label="ProfileFragment" />
+    <fragment
+        android:id="@+id/pinFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.pin.PinFragment"
+        android:label="PinFragment" >
+        <argument
+            android:name="isNavigatableBack"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_menuFragment2"
+        app:destination="@id/menuFragment2" />
+
 </navigation>
