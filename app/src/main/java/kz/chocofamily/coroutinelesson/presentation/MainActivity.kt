@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         mainNavController = findNavController(this, R.id.flowNavHost)
-        setupNavigation()
+        setupBottomNavigationView()
     }
 
     //region Navigation
@@ -27,9 +27,10 @@ class MainActivity : AppCompatActivity() {
     //endregion
 
     //region Private
-    private fun setupNavigation() {
+    private fun setupBottomNavigationView() {
 
-        bottomNavView.selectedItemId = R.id.menuFragment2
+        bottomNavView.selectedItemId = R.id.menuFragment2 // Нужно ставить то, что обычно открывается по умолчанию
+
         bottomNavView.setupWithNavController(mainNavController)
 
         mainNavController.addOnDestinationChangedListener { controller, destination, arguments ->
@@ -40,6 +41,8 @@ class MainActivity : AppCompatActivity() {
                 else -> showBnv()
             }
         }
+
+//        mainNavController.
     }
 
     private fun showBnv() {
