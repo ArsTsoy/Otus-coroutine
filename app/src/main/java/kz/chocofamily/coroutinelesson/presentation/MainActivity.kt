@@ -21,8 +21,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     //region Navigation
-    fun navigateToPin() {
-        mainNavController.navigate(R.id.action_global_pinFragment)
+    fun navigateToPin(args: Bundle? = null) {
+        mainNavController.navigate(R.id.action_global_pinFragment, args)
     }
     //endregion
 
