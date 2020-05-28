@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/flow_navigation"
-    app:startDestination="@id/cryptoCurrencyListFragment2">
+    app:startDestination="@id/menuFragment2">
 
-    <fragment
-        android:id="@+id/cryproCurrencyListFragment"
-        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currency_list.CryptoCurrencyListFragment"
-        android:label="CryproCurrencyListFragment" />
     <fragment
         android:id="@+id/cryptoCurrencyListFragment2"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm.CryptoCurrencyListFragment2"
@@ -18,9 +14,25 @@
     <fragment
         android:id="@+id/mainFragment2"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MainFragment"
-        android:label="MainFragment" />
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment2_to_profileFragment"
+            app:destination="@id/profileFragment" />
+    </fragment>
     <fragment
         android:id="@+id/menuFragment2"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MenuFragment"
-        android:label="MenuFragment" />
+        android:label="MenuFragment" >
+        <action
+            android:id="@+id/action_menuFragment2_to_someFlowFragment"
+            app:destination="@id/someFlowFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/someFlowFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.SomeFlowFragment"
+        android:label="SomeFlowFragment" />
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.ProfileFragment"
+        android:label="ProfileFragment" />
 </navigation>

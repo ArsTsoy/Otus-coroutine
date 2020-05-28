@@ -7,7 +7,7 @@
         android:title="Главная" />
 
     <item
-        android:id="@+id/cryproCurrencyListFragment"
+        android:id="@+id/cryptoCurrencyListFragment2"
         android:icon="@drawable/ic_notifications"
         android:title="Уведомления" />
 
