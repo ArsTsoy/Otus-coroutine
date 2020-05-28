@@ -11,4 +11,16 @@
         android:id="@+id/cryptoCurrencyListFragment2"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.crypto_currencies_list_with_vm.CryptoCurrencyListFragment2"
         android:label="CryptoCurrencyListFragment2" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.LoginFragment"
+        android:label="LoginFragment" />
+    <fragment
+        android:id="@+id/mainFragment2"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MainFragment"
+        android:label="MainFragment" />
+    <fragment
+        android:id="@+id/menuFragment2"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MenuFragment"
+        android:label="MenuFragment" />
 </navigation>
