@@ -4,15 +4,16 @@
     <item
         android:id="@+id/mainFragment2"
         android:icon="@drawable/ic_home"
-        android:title="Главная" />
+        android:title="Неправильно" />
 
     <item
         android:id="@+id/cryptoCurrencyListFragment2"
         android:icon="@drawable/ic_notifications"
-        android:title="Уведомления" />
+        android:title="Уведомления"
+        android:visible="false"/>
 
     <item
         android:id="@+id/menuFragment2"
         android:icon="@drawable/ic_menu"
-        android:title="Меню" />
+        android:title="Правильно" />
 </menu>
