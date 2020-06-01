@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/flow_navigation"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/menuFragment">
 
     <action
         android:id="@+id/action_global_pinFragment"
@@ -54,5 +54,9 @@
     <action
         android:id="@+id/action_global_menuFragment"
         app:destination="@id/menuFragment" />
+    <action
+        android:id="@+id/action_global_loginFragment"
+        app:destination="@id/loginFragment"
+        app:launchSingleTop="true" />
 
 </navigation>

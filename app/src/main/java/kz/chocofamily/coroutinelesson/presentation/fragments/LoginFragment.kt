@@ -25,10 +25,7 @@ import kz.chocofamily.coroutinelesson.presentation.fragments.pin.CheckPinVM
 class LoginFragment : Fragment() {
 
     private val pinVM: CheckPinVM by activityViewModels()
-    private val intentVM: IntentVM by activityViewModels()
     private val isAlreadyAuth: IsAlreadyAuth by activityViewModels()
-
-    private var deeplink = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,36 +37,12 @@ class LoginFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        intentVM.getResult().observe(this.viewLifecycleOwner, Observer { intent ->
-            intent?.let {
-                deeplink = it.getStringExtra(DEEPLINK) ?: ""
-            }
-        })
-        Log.i(
-            "myLoginFragment",
-            "isAlreadyAuth model : ${isAlreadyAuth.getInstantResult() ?: "null"}"
-        )
-        isAlreadyAuth.getResult().observe(this.viewLifecycleOwner, Observer {
-            Log.i("myProfileFragment", "in Login was isAlreadyAuth: ${it ?: "false"}")
-        })
 
         pinVM.getResult().observe(this.viewLifecycleOwner, Observer {
             when (it) {
                 CheckPinVM.PinCheckState.Success -> {
                     isAlreadyAuth.setResult(IsAlreadyAuth.AuthState.Success)
-                    Log.i(
-                        "myLoginFragment",
-                        "isAlreadyAuth model(After Success) : ${isAlreadyAuth.getInstantResult() ?: "null"}"
-                    )
-                    if (deeplink.isNotBlank()) {
-                        val deepLinkBuilder = NavDeepLinkRequest.Builder
-                            .fromUri(deeplink.toUri())
-                            .build()
-                        findNavController().navigate(deepLinkBuilder)
-                        intentVM.setResult(null)
-                    } else {
-                        findNavController().navigate(R.id.action_global_menuFragment)
-                    }
+                    findNavController().popBackStack()
                 }
                 null -> {
 //                    val direction = LoginFragmentDirections.actionGlobalPinFragment()

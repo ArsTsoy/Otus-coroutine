@@ -9,11 +9,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.app.NotificationCompat
-import androidx.core.app.NotificationManagerCompat
-import androidx.core.content.ContextCompat.getSystemService
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kz.chocofamily.coroutinelesson.R
 import kz.chocofamily.coroutinelesson.presentation.MainActivity
 import java.util.ArrayList
@@ -31,7 +29,7 @@ class HomeFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_main, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -83,8 +81,12 @@ class HomeFragment : Fragment() {
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setDefaults(Notification.DEFAULT_ALL)
                 .setContentIntent(pendingIntent)
-            intent.addFlags(Intent.FLAG_ACTIVITY_PREVIOUS_IS_TOP)
-            notificationManager.notify(0, builder.build())
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+            intent.action = Intent.ACTION_MAIN
+            intent.addCategory(Intent.CATEGORY_LAUNCHER)
+            val notification = builder.build()
+            notification.flags = Notification.FLAG_AUTO_CANCEL
+            notificationManager.notify(0, notification)
         }
     }
 }
