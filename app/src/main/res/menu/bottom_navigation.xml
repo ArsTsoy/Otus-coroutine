@@ -9,8 +9,7 @@
     <item
         android:id="@+id/cryptoCurrencyListFragment2"
         android:icon="@drawable/ic_notifications"
-        android:title="Уведомления"
-        android:visible="false"/>
+        android:title="Уведомления" />
 
     <item
         android:id="@+id/menuFragment2"

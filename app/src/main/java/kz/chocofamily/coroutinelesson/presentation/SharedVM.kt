@@ -21,6 +21,10 @@ abstract class SharedVM<T> : ViewModel() {
         return resultLiveData
     }
 
+    fun getInstantResult(): T? {
+        return resultLiveData.value
+    }
+
     override fun onCleared() {
         setResult(null)
         super.onCleared()
