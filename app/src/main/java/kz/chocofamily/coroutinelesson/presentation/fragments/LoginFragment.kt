@@ -68,7 +68,7 @@ class LoginFragment : Fragment() {
                         findNavController().navigate(deepLinkBuilder)
                         intentVM.setResult(null)
                     } else {
-                        findNavController().navigate(R.id.action_global_menuFragment2)
+                        findNavController().navigate(R.id.action_global_menuFragment)
                     }
                 }
                 null -> {

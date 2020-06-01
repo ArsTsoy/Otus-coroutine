@@ -2,9 +2,9 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/mainFragment2"
+        android:id="@+id/homeFragment"
         android:icon="@drawable/ic_home"
-        android:title="Неправильно" />
+        android:title="Главная" />
 
     <item
         android:id="@+id/cryptoCurrencyListFragment2"
@@ -12,7 +12,7 @@
         android:title="Уведомления" />
 
     <item
-        android:id="@+id/menuFragment2"
+        android:id="@+id/menuFragment"
         android:icon="@drawable/ic_menu"
-        android:title="Правильно" />
+        android:title="Меню" />
 </menu>

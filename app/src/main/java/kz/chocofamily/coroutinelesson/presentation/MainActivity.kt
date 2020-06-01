@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
     //region Private
     private fun setupBottomNavigationView() {
 
-        bottomNavView.selectedItemId = R.id.menuFragment2 // Нужно ставить то, что обычно открывается по умолчанию
+        bottomNavView.selectedItemId = R.id.menuFragment // Нужно ставить то, что обычно открывается по умолчанию
 
         bottomNavView.setupWithNavController(mainNavController)
 

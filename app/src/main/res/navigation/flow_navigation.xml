@@ -16,19 +16,19 @@
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.LoginFragment"
         android:label="LoginFragment" />
     <fragment
-        android:id="@+id/mainFragment2"
-        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MainFragment"
+        android:id="@+id/homeFragment"
+        android:name="kz.chocofamily.coroutinelesson.presentation.fragments.HomeFragment"
         android:label="MainFragment" >
         <action
-            android:id="@+id/action_mainFragment2_to_profileFragment"
+            android:id="@+id/action_homeFragment_to_profileFragment"
             app:destination="@id/profileFragment" />
     </fragment>
     <fragment
-        android:id="@+id/menuFragment2"
+        android:id="@+id/menuFragment"
         android:name="kz.chocofamily.coroutinelesson.presentation.fragments.MenuFragment"
         android:label="MenuFragment" >
         <action
-            android:id="@+id/action_menuFragment2_to_someFlowFragment"
+            android:id="@+id/action_menuFragment_to_someFlowFragment"
             app:destination="@id/someFlowFragment" />
     </fragment>
     <fragment
@@ -52,7 +52,7 @@
             android:defaultValue="false" />
     </fragment>
     <action
-        android:id="@+id/action_global_menuFragment2"
-        app:destination="@id/menuFragment2" />
+        android:id="@+id/action_global_menuFragment"
+        app:destination="@id/menuFragment" />
 
 </navigation>

@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import kotlinx.android.synthetic.main.fragment_menu.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kz.chocofamily.coroutinelesson.R
 
 /**
@@ -20,14 +20,14 @@ class MenuFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(R.layout.fragment_menu, container, false)
+        return inflater.inflate(R.layout.fragment_home, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
         btnNext.setOnClickListener {
-            val direction = MenuFragmentDirections.actionMenuFragment2ToSomeFlowFragment()
+            val direction = MenuFragmentDirections.actionMenuFragmentToSomeFlowFragment()
             findNavController().navigate(direction)
         }
     }

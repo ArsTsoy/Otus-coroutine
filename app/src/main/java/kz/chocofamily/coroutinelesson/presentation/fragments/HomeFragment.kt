@@ -24,7 +24,7 @@ import java.util.ArrayList
 
 internal const val DEEPLINK = "deeplink"
 
-class MainFragment : Fragment() {
+class HomeFragment : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,7 +37,7 @@ class MainFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnNextInMain.setOnClickListener {
-            val direction = MainFragmentDirections.actionMainFragment2ToProfileFragment()
+            val direction = HomeFragmentDirections.actionHomeFragmentToProfileFragment()
             findNavController().navigate(direction)
         }
 
